@@ -15,4 +15,4 @@ Docker部署案例
 ### ZK
 
 - `cd zk`
-- `sh ./compose.sh up -d`
+- `sh ./bin/compose.sh up -d`
