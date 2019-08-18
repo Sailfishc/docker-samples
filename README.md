@@ -11,3 +11,8 @@ Docker部署案例
 > 连接到MYSQL容器中
 
 - `sudo docker exec -it [container-name] bash`
+
+### ZK
+
+- `cd zk`
+- `sh ./compose.sh up -d`
