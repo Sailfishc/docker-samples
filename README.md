@@ -16,3 +16,8 @@ Docker部署案例
 
 - `cd zk`
 - `sh ./bin/compose.sh up -d`
+
+## Docker常用命令
+
+- 进入docker redis-cli：docker exec -it [container-name] redis-cli
+- 进入docker zk：docker exec -it [zk-name] zkCli.sh
