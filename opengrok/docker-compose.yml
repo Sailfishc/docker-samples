@@ -6,7 +6,7 @@ services:
     container_name: opengrok
     image: opengrok/docker:latest
     ports:
-      - "8080:8080/tcp"
+      - "9000:9000/tcp"
     environment:
       REINDEX: '60'
     # Volumes store your data between container upgrades
