@@ -1,0 +1,21 @@
+version: "2"
+services:
+  jellyfin:
+    image: linuxserver/jellyfin
+    container_name: jellyfin
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - UMASK_SET=022 #optional
+    volumes:
+      - /sharedfolders/Share-Data/jellyfin/config:/config
+      - /sharedfolders/Share-Data/jellyfin/tvshows:/data/tvshows
+      - /sharedfolders/Share-Data/jellyfin/movies:/data/movies
+      - /sharedfolders/Share-Data/jellyfin/cache:/transcode #optional
+    ports:
+      - 8096:8096
+      - 8920:8920 #optional
+    devices:
+      - /dev/dri:/dev/dri #optional
+    restart: always

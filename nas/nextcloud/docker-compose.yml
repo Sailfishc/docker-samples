@@ -1,0 +1,32 @@
+version: '2'
+
+volumes:
+  nextcloud:
+  db:
+
+services:
+  db:
+    image: mariadb
+    container_name: mariadb
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
+    restart: always
+    volumes:
+      - db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=sailfish
+      - MYSQL_PASSWORD=nextcloud
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+
+  app:
+    image: nextcloud
+    container_name: nextcloud
+    links:
+      - db
+    ports:
+      - 8080:80
+    volumes:
+      - /sharedfolders/Share-Data/nextcloud/data:/var/www/html
+      - /sharedfolders/Share-Data/nextcloud/config:/var/www/html/config
+      - /sharedfolders/Share-Data/nextcloud/apps:/var/www/html/apps
+    restart: always
