@@ -38,3 +38,8 @@ Docker部署案例
 - https://hub.docker.com/_/nextcloud/
 
 ### jeyllfin
+
+### Gitea
+
+- 官网：https://gitea.io/zh-cn/
+- Docker部署：https://docs.gitea.io/en-us/install-with-docker/
