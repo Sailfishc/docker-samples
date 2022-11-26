@@ -1,0 +1,10 @@
+version: '3'
+services:
+
+  web:
+    build: .
+    ports:
+      - "6400:5000"
+
+  redis:
+    image: "redis:alpine"
